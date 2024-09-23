@@ -1,0 +1,116 @@
+From c0653166e87befd8d10694581a4dff0bf448a240 Mon Sep 17 00:00:00 2001
+From: AlbanyWelch <albanywelch@gmail.com>
+Date: Mon, 23 Sep 2024 13:48:30 +0100
+Subject: [PATCH] Unit Tests and Minor Corrections
+
+---
+ __pycache__/client3.cpython-311.pyc | Bin 0 -> 1924 bytes
+ client3.py                          |   6 +++---
+ client_test.py                      |  19 +++++++++++++++----
+ 3 files changed, 18 insertions(+), 7 deletions(-)
+ create mode 100644 __pycache__/client3.cpython-311.pyc
+
+diff --git a/__pycache__/client3.cpython-311.pyc b/__pycache__/client3.cpython-311.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..730523ae81367aec26cdc0796fdbaf1c62f8029d
+GIT binary patch
+literal 1924
+zcmaJBOK2NMbXNP36s>H@@u#+R*aX~0ZTw3};~J;IvE`6LjGZ)Tyr>Z?&DdF6(ki>F
+zhNw2^(8H$Wph6&`AMl~LDY=BwkB=_o(wh_n5d#H7=^;0j^psQItSrk8H1m1$-kUdX
+z-f!lIVDJcn_IL81<x_ry{$fO{1^1AbH4dSN2qVm;k=k52m2+v2%43fzU|tom@C8yO
+zECTcrAC}fU?7aDh2N6HaBShQ+J&$2F+hJ-Jefp~!06DZOw<HL^+Oh#{cC@$$S0Ze7
+z9;911=;2n|Hv#)`YYQE|_b{~?+7~;3Y`x*U8rG58MZ#eJsCpFcmB`V<I^zODYPZ^>
+z_NslPk93jlDbNR!Z(%R#{)WRo(gV;>dI26GeE<XB`48*h(ETy@gbdJ2x^S?6-#(x^
+z+SC?A{jnQ)CQy*jYyN_!UodwSa(NX+J6|xN`NFYVww;?C9Zef4Eq%+d?8%9-iLue!
+zd1Br@uj6x{Z|MI*G*kN#g;U@a;$go08o)!e4jS85Y;g7gS=jTm_b}ha4|}=cdF_<Y
+zmVCo0e%-Uq7r+WE76J%u2<sf<tP9Hm_$U?5DhsB8^C_Ze>9k_sB1)DJOtA8qmd+DP
+zu?=N~WQnQSAfaH*)^diPwG}E_wvk$+Ufakek~*eh&eT(+No&^H3l`=mN5$o|q1jQ9
+zinsHIO-vRU>W2e~ro10yo2UutK$ZwVVeQq$naTJyi<nkiODDB#eAY<iGbC$U@fib?
+z_(uzu4RZzf%Z90~km1!_CN*r`A;UIk9FM2cI>??L$=#*$3bALw@C9bL$)1YBZu$g3
+z5$($1(mVI(i?KgLJtb1URO@|v^G>aIv>F<#g~p1P{)b%;_Llpr!Q-3LRe7iws|P}*
+zXnE<8SP2YQgyEN<8m0CN4G4z21rY%R3WCGj-WT9u#kLL{mL5onr*K@kNNfcnt{aN6
+zthjMXXo{A_dw5bYnZ6%En0oiNTS(GkTZ&?`&w={D^(#z~*$reArZoTn-1c>r#=n#u
+zx!xIaZr1}{rL*_WSA+qR{TS4jNMtlUn@AMAi!5tcDfku5R!%_PCJWL@1wuSo@SSYh
+zGx>^(7JTkC%8*6*=?gQIpN-8$`>C*M8CfcsV7rl_9eFdI){`S9fyZOnRBF;xT)Y;$
+zvP8LgH#x4U%!I6#A&CSPbSN7tf{qnJxdauVps+=~EiGQqV&n*11C@}`Y$}*U!&GwX
+z&7zVUAj@Q5xm$fE#2K0FA9X9vEnKLJFk>+9-N?Q2O=aL&q{)Zod%$Dw)mj7C;5m+K
+zyo)%w7+}4Qf<?F2QBS2c8WQrKEQ+v*z9QF<ByOaE_Cc4x4K~m|2q8gs3eWid3g5pQ
+z3_Bl}hDt+a?yD0IPTaeB|7HXE#Tl*%9j+c8EOkE^D9?R6|2%T)S>)7{Grvv!G_@1l
+zk)8&B?|j->J-tvny-<xT)*_3~BiElru2&;BYLOe&@KP<j<Vd^WqmESX0RwnH2DJ=2
+zvHJMACy{MZ9iOd@&sOCTCsz8PtUv0hM~*pjr8D;~*X6Jib7I?h)^~K)D~syhh-;PR
+z=t@@QR83A*+_CEmI-;{$o+wXj&OJKw{pBa`Zx8)^t~xkf8=S6oOjmsuYQ75<cQpEt
+OFaQB)2yJiOWc&vw3*R;X
+
+literal 0
+HcmV?d00001
+
+diff --git a/client3.py b/client3.py
+index 1b5f9d8..4766b15 100644
+--- a/client3.py
++++ b/client3.py
+@@ -34,14 +34,14 @@ def getDataPoint(quote):
+     stock = quote['stock']
+     bid_price = float(quote['top_bid']['price'])
+     ask_price = float(quote['top_ask']['price'])
+-    price = (bid_price + ask_price) / 2
++    price = (bid_price + ask_price)/2
+     return stock, bid_price, ask_price, price
+ 
+ 
+ def getRatio(price_a, price_b):
+     """ Get ratio of price_a and price_b """
+-    if price_b == 0:
+-        return #just in case of division of 0
++    if (price_b == 0):
++        return 0 #just in case of division of 0
+     return price_a/price_b
+ 
+ 
+diff --git a/client_test.py b/client_test.py
+index af2bf26..edf2900 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -1,5 +1,6 @@
+ import unittest
+ from client3 import getDataPoint
++from client3 import getRatio
+ 
+ class ClientTest(unittest.TestCase):
+   def test_getDataPoint_calculatePrice(self):
+@@ -7,19 +8,29 @@ class ClientTest(unittest.TestCase):
+       {'top_ask': {'price': 121.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+-    """ ------------ Add the assertion below ------------ """
++    for quote in quotes:
++       self.assertEqual(getDataPoint(quote), (quote['stock'],quote['top_bid']['price'],quote['top_ask']['price'],(quote['top_bid']['price']+quote['top_ask']['price'])/2))
+ 
+   def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
+     quotes = [
+       {'top_ask': {'price': 119.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+-    """ ------------ Add the assertion below ------------ """
++    for quote in quotes:
++       self.assertEqual(getDataPoint(quote),(quote['stock'],quote['top_bid']['price'],quote['top_ask']['price'],(quote['top_bid']['price']+quote['top_ask']['price'])/2))
+ 
+ 
+-  """ ------------ Add more unit tests ------------ """
+-
++  def test_getRatio(self):
++    with self.assertRaises(ZeroDivisionError):
++      prices = [
++        {'price_a':119.84,'price_b':119.76},
++        {'price_a':0,'price_b':119.76},
++        {'price_a':119.84,'price_b':0}
++      ]
+ 
++      for price in prices:
++        self.assertEqual(getRatio(price['price_a'],price['price_b']),(price['price_a']/price['price_b']) or 0)
++        
+ 
+ if __name__ == '__main__':
+     unittest.main()
+-- 
+2.46.0.windows.1
+
